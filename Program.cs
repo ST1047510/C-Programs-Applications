@@ -5,39 +5,35 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Collections;
 
-namespace StudentMarkList
+namespace ASCIIvalue
 {
     public class program
     {
         public static void Main(string[] args)
         {
-            //Loop Reapeat
-            for (int i = 1; i <= 5; i++)
+            //declare arraylist
+            ArrayList charlist = new ArrayList();
+
+            //Prompt user to enter 8 characters
+            Console.WriteLine("Hi Please enter 8 Characters: ");
+
+            for(int i = 0;i < 8; i++)
             {
-                //dechalre variable
-                string studentname;
-                int mark;
+                Console.WriteLine("character" +  (i  +  1)  +  ": ");
+                char character = Convert.ToChar(Console.ReadLine());
+                charlist.Add(character);
+            }
+            //Display ASCII Values
+            Console.WriteLine("\nASCII Values");
 
-                //Ask user input
-                Console.WriteLine("Student: " + i);
-
-                Console.Write("Enter Student Name:");
-                studentname = Console.ReadLine();
-
-                Console.Write("Enter Student Mark 0-100:");
-                mark = Convert.ToInt32(Console.ReadLine());
-
-                if (mark >= 50)
-                {
-                    Console.WriteLine(studentname + "  Passed");
-                }
-                else
-                { 
-                    Console.WriteLine(studentname + " Failed");    
-                }
-                Console.WriteLine(); //Empty Line
+            foreach(char character in charlist)
+            {
+                int ascii = (int) character;
+                Console.WriteLine("ASCII Value of : "+  character +  "is "  + ascii);
             }
             Console.ReadLine();
+
         }
-    } 
+
+    }
 }
